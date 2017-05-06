@@ -1,0 +1,40 @@
+body{
+	background: #abc;
+}
+
+#search-box{
+	margin: 10% auto;
+	text-align: center;
+}
+
+#search-icon{
+	margin-top: 200px;
+	text-align: center;
+}
+
+
+.hidden{
+	display: none;
+}
+
+.show{
+	display: block;
+}
+
+.search-info{
+	font-size: 40px;
+	text-transform: capitalize;
+	text-align: center;
+}
+
+input{
+	width: 200px;
+	height: 30px;
+	border-radius: 10px;
+	-webkit-border-radius: 10px;
+	-moz-border-radius: 10px;
+	outline: none;
+	border-color: green;
+	border-style: solid;
+	margin: 0 auto;
+}
