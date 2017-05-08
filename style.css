@@ -35,6 +35,18 @@ body{
 	top: 0px;
 }
 
+#random-wiki{
+	width: 80px;
+	height: 30px;
+	border-radius: 3px;
+	-webkit-border-radius: 3px;
+	-moz-border-radius: 3px;
+}
+
+#button-container{
+	text-align: center;
+}
+
 .border{
 	border: 1px solid red;
 }
