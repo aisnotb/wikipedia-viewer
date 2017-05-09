@@ -31,8 +31,9 @@ body{
 
 .fa-times{
 	position: absolute;
-	left: 638px;
+	left: 850px;
 	top: 0px;
+	width: 16px;
 }
 
 #random-wiki{
