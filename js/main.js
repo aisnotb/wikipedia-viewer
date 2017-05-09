@@ -23,11 +23,44 @@ $('document').ready(function(){
 			getResource();
 		});
 
+		$('#random').click(function(){
+			getRandom();
+		});
+
+		$("#input").keypress(function(e){
+			if (e.which === 13) {
+				// alert('you pressed enter');
+				getResource();
+			}
+		});
+
+		function getRandom(){
+			var url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=random&grnnamespace=0&prop=revisions|images&rvprop=content&grnlimit=10' + '&callback=?' ;
+			$.ajax({
+				type: "GET",
+				url: url,
+				async: true,
+				dataType: "json",
+				success: function(data){
+					$("#output").html('');
+					$("#output").append("<ul id='rst'></ul>");
+
+					for (var i = 0; i < data[1].length; i++) {
+						$('#rst').prepend("<li><a href=" + data[3][i] + ">" + "<p>"+ data[2][i] +"</p>"+ "</li>");
+					}
+					console.log(url);	
+				},
+				error: function(errMsg){
+					console.log(errMsg);
+				}
+			});
+		}
+
 		//make request to end point
 		function getResource(){
 
 			var searchItem = $('input').val();
-			var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search=' + searchItem + '&callback=?';
+			var url = 'https://en.wikipedia.org/w/api.php?action=opensearch&search='+searchItem + '&callback=?';
 
 			$.ajax({
 				type: "GET",
